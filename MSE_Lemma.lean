@@ -19,7 +19,7 @@ import Mathlib
 def oneIsNItself (f:ℕ+ → ℕ+)(k:ℕ+):Prop:=(k>1 → ∃d,f k+f d=k ∧ d∣k ∧ d≠k)
 
 theorem MSEQuestionProof (f:ℕ+ → ℕ+) (h_1:∀n,n>1 → (∃d1 d2,f d1+f d2=n ∧ d1∣n ∧ d2∣n ∧ d1≠d2)) (h_2:f 1=1):∀n,oneIsNItself f n:= by
-  have interim:(∀m, (∀m1<m,oneIsNItself f m1) → oneIsNItself f m):=by
+  have interim:(∀m, (∀m1 < m,oneIsNItself f m1) → oneIsNItself f m):=by
     intro m2
     intro h2
     intro h3
